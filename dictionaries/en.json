@@ -1,0 +1,47 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "stack": "Stack",
+        "projects": "Projects",
+        "roadmap": "Roadmap",
+        "contact": "Contact"
+    },
+    "hero": {
+        "cta_primary": "Connect",
+        "cta_secondary": "Explore Works",
+        "scroll": "Scroll Down"
+    },
+    "about": {
+        "title": "About",
+        "cta": "Read Full Version"
+    },
+    "stack": {
+        "title": "STACK"
+    },
+    "projects": {
+        "title": "PROJECTS",
+        "scroll_text": "SCROLL TO EXPLORE",
+        "end_text": "END"
+    },
+    "roadmap": {
+        "title": "Roadmap"
+    },
+    "contact": {
+        "title": "CONTACT",
+        "send_email": "Send an Email",
+        "direct_line": "Direct Line",
+        "all_rights_reserved": "ALL RIGHTS RESERVED.",
+        "modal_title": "Let's Connect",
+        "modal_description": "Send me a message and I'll get back to you as soon as possible."
+    },
+    "others": {
+        "about_project": "About the Project",
+        "technologies": "Technologies",
+        "live_demo": "Live Demo",
+        "source_code": "Source Code",
+        "project_details": "Details about",
+        "select_language": "Select Language",
+        "change_the_site_language": "Change the site language."
+    }
+}

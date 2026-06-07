@@ -1,0 +1,155 @@
+{
+   "hero": {
+    "title": "I *build* intelligent software that bridges *creativity* and *logic*",
+    "stats": "***AI/ML*** & Full-Stack",
+    "cta_primary": "Contact Me",
+    "cta_secondary": "View Projects"
+},
+    "about": {
+        "intro": "A developer who builds *real products* with *AI* and turns complex ideas into **clean, scalable software**.",
+        "description": "An *AI/ML-focused* mindset; building end-to-end systems from intelligent backends to polished interfaces, learning through **hands-on experimentation**, and prioritizing ***purposeful code***.",
+        "full": "I'm a Computer Science graduate student at Stevens Institute of Technology (GPA: 3.91) currently interning at Sport Squad, Inc. (JOOLA) as a Business Development Intern — building AI-powered tools using generative, agentic, and embedded AI on the Shopify platform.\n\nI've worked across the full stack: React, Next.js, Flask, Node.js on the frontend and backend; TensorFlow, Scikit-learn, OpenAI GPT for machine learning and AI; and Power BI, DAX, and ETL pipelines for data analytics. I've shipped everything from CNN-based image classifiers to multi-page Streamlit AI applications.\n\nPreviously, I was a Graduate Teaching Assistant for CS 555: Agile Methods at Stevens, helping 40+ students with Scrum, Kanban, and sprint planning. Before that, I interned at Tata Consultancy Services building Power BI dashboards and data models for service monitoring.\n\nI don't consider it enough for something to just work. I care about clean architecture, maintainable code, and software that actually solves real problems. My current goal is to keep building at the intersection of AI and full-stack — systems that are both intelligent and intuitive."
+    },
+    "manifesto": {
+        "items": [
+            "INTELLIGENT BY DESIGN",
+            "CLEAN ARCHITECTURE",
+            "SHIP FAST, SHIP RIGHT",
+            "DATA-DRIVEN DECISIONS",
+            "PERFORMANCE WITHOUT COMPROMISE",
+            "BUILD WHAT MATTERS"
+        ]
+    },
+    "stack": {
+        "items": [
+            {
+                "title": "Languages",
+                "items": [
+                    { "name": "Python", "icon": "https://cdn.simpleicons.org/python" },
+                    { "name": "JavaScript", "icon": "https://cdn.simpleicons.org/javascript" },
+                    { "name": "TypeScript", "icon": "https://cdn.simpleicons.org/typescript" },
+                    { "name": "Java", "icon": "https://cdn.simpleicons.org/openjdk" },
+                    { "name": "SQL", "icon": "https://cdn.simpleicons.org/mysql" },
+                    { "name": "HTML5", "icon": "https://cdn.simpleicons.org/html5" },
+                    { "name": "CSS3", "icon": "https://www.svgrepo.com/show/452185/css-3.svg" }
+                ]
+            },
+            {
+                "title": "AI & Machine Learning",
+                "items": [
+                    { "name": "TensorFlow", "icon": "https://cdn.simpleicons.org/tensorflow" },
+                    { "name": "Scikit-learn", "icon": "https://cdn.simpleicons.org/scikitlearn" },
+                    { "name": "OpenAI", "icon": "https://cdn.simpleicons.org/openai" },
+                    { "name": "Pandas", "icon": "https://cdn.simpleicons.org/pandas" },
+                    { "name": "NumPy", "icon": "https://cdn.simpleicons.org/numpy" },
+                    { "name": "Streamlit", "icon": "https://cdn.simpleicons.org/streamlit" }
+                ]
+            },
+            {
+                "title": "Web & Backend",
+                "items": [
+                    { "name": "React", "icon": "https://cdn.simpleicons.org/react" },
+                    { "name": "Next.js", "icon": "https://cdn.simpleicons.org/nextdotjs" },
+                    { "name": "Node.js", "icon": "https://cdn.simpleicons.org/nodedotjs" },
+                    { "name": "Flask", "icon": "https://cdn.simpleicons.org/flask" },
+                    { "name": "Tailwind CSS", "icon": "https://cdn.simpleicons.org/tailwindcss" },
+                    { "name": "Shopify", "icon": "https://cdn.simpleicons.org/shopify" }
+                ]
+            },
+            {
+                "title": "Data & Tools",
+                "items": [
+                    { "name": "Power BI", "icon": "https://cdn.simpleicons.org/powerbi" },
+                    { "name": "PostgreSQL", "icon": "https://cdn.simpleicons.org/postgresql" },
+                    { "name": "MySQL", "icon": "https://cdn.simpleicons.org/mysql" },
+                    { "name": "MongoDB", "icon": "https://cdn.simpleicons.org/mongodb" },
+                    { "name": "Docker", "icon": "https://cdn.simpleicons.org/docker" },
+                    { "name": "AWS", "icon": "https://cdn.simpleicons.org/amazonaws" },
+                    { "name": "Git", "icon": "https://cdn.simpleicons.org/git" }
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "intro": "A collection of *AI systems*, *full-stack products*, and *data tools* built to solve **real problems**.",
+        "items": [
+            {
+                "id": "1",
+                "title": "AI Study Buddy",
+                "category": "AI Application",
+                "year": "2026",
+                "description": "A multi-page AI study assistant that transforms lecture notes and PDFs into summaries, flashcards, quizzes, and interactive Q&A — with spaced repetition planning and difficulty-based flashcard tracking.",
+                "image": "/projects/study-buddy.jpg",
+                "repo": "https://github.com/arjunreddy0729/ai-study-buddy",
+                "stack": ["Python", "OpenAI GPT-4o", "Streamlit", "PyPDF2"]
+            },
+            {
+                "id": "2",
+                "title": "Emoji Detection System",
+                "category": "Machine Learning",
+                "year": "2026",
+                "description": "Deep learning emoji classifier using CNNs with 94% accuracy across 7 categories. Features real-time GUI prediction with sub-200ms inference latency and full data augmentation pipeline.",
+                "image": "/projects/emoji-detection.jpg",
+                "repo": "https://github.com/arjunreddy0729",
+                "stack": ["Python", "TensorFlow", "CNN", "OpenCV"]
+            },
+            {
+                "id": "3",
+                "title": "ConvLSTM Video Classification",
+                "category": "Deep Learning",
+                "year": "2024",
+                "description": "Spatiotemporal video classification pipeline using ConvLSTM architecture for extracting temporal features from video sequences, deployed as a production-ready Flask REST API.",
+                "image": "/projects/video-classification.jpg",
+                "repo": "https://github.com/arjunreddy0729",
+                "stack": ["TensorFlow", "OpenCV", "Flask", "REST API"]
+            }
+        ]
+    },
+    "roadmap": {
+        "description": "A timeline of my journey through computer science, machine learning, and software engineering.",
+        "items": [
+            {
+                "id": "01",
+                "year": "2021",
+                "description": "Started my B.Tech in Computer Science & Engineering (AIML) at CVR College of Engineering in Hyderabad. Got introduced to programming fundamentals, data structures, and algorithms.",
+                "tags": ["C", "Java", "Python"]
+            },
+            {
+                "id": "02",
+                "year": "2023",
+                "description": "Dove deep into machine learning and AI coursework. Built my first ML models and started experimenting with TensorFlow and Scikit-learn for classification tasks.",
+                "tags": ["Python", "TensorFlow", "Scikit-learn", "ML"]
+            },
+            {
+                "id": "03",
+                "year": "2024",
+                "description": "Built the ConvLSTM Video Classification system and Movie Recommendation engine. Interned at TCS building Power BI dashboards and ETL pipelines for service monitoring at scale.",
+                "tags": ["Power BI", "DAX", "TensorFlow", "Flask"]
+            },
+            {
+                "id": "04",
+                "year": "2025",
+                "description": "Started my M.S. in Computer Science at Stevens Institute of Technology. Became a Graduate Teaching Assistant for CS 555: Agile Methods, helping 40+ students master Scrum and Kanban.",
+                "tags": ["React", "Next.js", "Agile", "Stevens"]
+            },
+            {
+                "id": "05",
+                "year": "2026",
+                "description": "Joined Sport Squad, Inc. (JOOLA) as a Business Development Intern building AI-powered tools with generative AI, chatbots, and recommendation systems on the Shopify platform.",
+                "tags": ["OpenAI", "Generative AI", "Shopify", "Next.js"]
+            }
+        ]
+    },
+    "contact": {
+        "description": "Whether it's an AI project, full-stack product, or just connecting over shared interests in tech — I'm always open.",
+        "email": "arjunreddykadari89@gmail.com",
+        "phone": "+1 (551)-358-6240"
+    },
+    "social": {
+        "title": "SOCIAL",
+        "items": [
+            { "label": "GitHub", "href": "https://github.com/arjunreddy0729" },
+            { "label": "LinkedIn", "href": "https://linkedin.com/in/arjun-reddy-95ba4934a" }
+        ]
+    }
+}
