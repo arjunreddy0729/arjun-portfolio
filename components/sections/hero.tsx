@@ -76,7 +76,9 @@ const track2 = [
                                     alt="Portrait"
                                     fill
                                     sizes="(max-width: 640px) 50vw, (max-width: 1280px) 25vw, 15vw"
-                                    loading="lazy"
+                                    // First tile of each track is above the fold and is the LCP element.
+                                    priority={idx === 0}
+                                    loading={idx === 0 ? undefined : "lazy"}
                                     className="object-cover object-center grayscale contrast-[1.08] brightness-[0.8]"
                                 />
                             </div>
@@ -101,7 +103,8 @@ const track2 = [
                                     alt="Portrait"
                                     fill
                                     sizes="(max-width: 640px) 90vw, (max-width: 1280px) 25vw, 15vw"
-                                    loading="lazy"
+                                    priority={idx === 0}
+                                    loading={idx === 0 ? undefined : "lazy"}
                                     className="object-cover object-center grayscale contrast-[1.08] brightness-[0.8]"
                                 />
                             </div>

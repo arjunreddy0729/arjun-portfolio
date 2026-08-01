@@ -4,13 +4,7 @@
         "stats": "***AI/ML*** & Full-Stack",
         "cta_primary": "Contact Me",
         "cta_secondary": "View Projects",
-        "availability": "Open to AI/ML, Data & Software Engineering roles",
-        "metrics": [
-            { "value": "3.91", "suffix": "/4.0", "label": "Graduate GPA" },
-            { "value": "94", "suffix": "%", "label": "CNN Model Accuracy" },
-            { "value": "40", "suffix": "+", "label": "Students Taught" },
-            { "value": "5", "suffix": "", "label": "BI Dashboards Shipped" }
-        ]
+        "availability": "Open to AI/ML, Data & Software Engineering roles"
     },
     "about": {
         "intro": "A developer who builds *real products* with *AI* and turns complex ideas into **clean, scalable software**.",

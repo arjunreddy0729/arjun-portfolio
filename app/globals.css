@@ -193,6 +193,14 @@
     overscroll-behavior-y: none;
   }
 
+  /*
+   * The scroll container for every useScroll({ target }) on the page. Framer
+   * Motion cannot measure target offsets reliably against a static container.
+   */
+  html {
+    position: relative;
+  }
+
   body {
     @apply bg-background text-foreground;
   }

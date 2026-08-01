@@ -62,9 +62,3 @@ export type EducationItem = {
     location: string;
     period: string;
 };
-
-export type HeroMetric = {
-    value: string;
-    suffix: string;
-    label: string;
-};

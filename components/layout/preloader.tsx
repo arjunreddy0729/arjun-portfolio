@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Preloader() {
@@ -84,9 +85,12 @@ export function Preloader() {
 
                             <div className="absolute inset-3 rounded-full border border-border/50 bg-secondary/5 backdrop-blur-md" />
 
-                            <img
+                            <Image
                                 src="/Logo.jpg"
                                 alt="Logo"
+                                width={56}
+                                height={56}
+                                priority
                                 className="w-14 h-14 object-contain z-10"
                             />
                         </div>
