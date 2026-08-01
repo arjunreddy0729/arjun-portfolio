@@ -1,10 +1,15 @@
 import ScrollProgress from "@/components/layout/scroll-progress";
 import ManifestoFlow from "@/components/effects/manifesto-flow";
 import Hero from "@/components/sections/hero";
+import Metrics from "@/components/sections/metrics";
 import About from "@/components/sections/about";
 import Stack from "@/components/sections/stack";
 import Projects from "@/components/sections/projects";
+import Architecture from "@/components/sections/architecture";
+import Experience from "@/components/sections/experience";
 import Roadmap from "@/components/sections/roadmap";
+import Credentials from "@/components/sections/credentials";
+import Assistant from "@/components/sections/assistant";
 import Contact from "@/components/sections/contact";
 
 export default function Home() {
@@ -17,6 +22,8 @@ export default function Home() {
         <Hero />
 
         <div className="relative z-10 bg-background border-t border-border">
+
+          <Metrics />
 
           <section id="about">
             <About />
@@ -34,13 +41,29 @@ export default function Home() {
             <Projects />
           </section>
 
+          <section id="architecture">
+            <Architecture />
+          </section>
+
           <ManifestoFlow />
+
+          <section id="experience">
+            <Experience />
+          </section>
 
           <section id="roadmap">
             <Roadmap />
           </section>
 
           <ManifestoFlow reverse />
+
+          <section id="certifications">
+            <Credentials />
+          </section>
+
+          <section id="assistant">
+            <Assistant />
+          </section>
 
           <section id="contact">
             <Contact />

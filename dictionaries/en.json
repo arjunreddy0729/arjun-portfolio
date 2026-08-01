@@ -4,7 +4,11 @@
         "about": "About",
         "stack": "Stack",
         "projects": "Projects",
+        "architecture": "Architecture",
+        "experience": "Experience",
         "roadmap": "Roadmap",
+        "certifications": "Certifications",
+        "assistant": "Ask AI",
         "contact": "Contact"
     },
     "hero": {
@@ -14,7 +18,8 @@
     },
     "about": {
         "title": "About",
-        "cta": "Read Full Version"
+        "cta": "Read Full Version",
+        "education_title": "Education"
     },
     "stack": {
         "title": "STACK"
@@ -24,13 +29,33 @@
         "scroll_text": "SCROLL TO EXPLORE",
         "end_text": "END"
     },
+    "architecture": {
+        "title": "Architecture"
+    },
+    "experience": {
+        "title": "Experience"
+    },
     "roadmap": {
         "title": "Roadmap"
+    },
+    "certifications": {
+        "title": "Certifications"
+    },
+    "resume": {
+        "title": "Resume",
+        "cta": "Download Resume",
+        "meta": "PDF • Updated 2026"
+    },
+    "assistant": {
+        "title": "Ask My AI",
+        "send": "Send",
+        "thinking": "Thinking"
     },
     "contact": {
         "title": "CONTACT",
         "send_email": "Send an Email",
         "direct_line": "Direct Line",
+        "based_in": "Based In",
         "all_rights_reserved": "ALL RIGHTS RESERVED.",
         "modal_title": "Let's Connect",
         "modal_description": "Send me a message and I'll get back to you as soon as possible."
@@ -38,6 +63,8 @@
     "others": {
         "about_project": "About the Project",
         "technologies": "Technologies",
+        "highlights": "What It Does",
+        "impact": "Impact",
         "live_demo": "Live Demo",
         "source_code": "Source Code",
         "project_details": "Details about",

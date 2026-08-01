@@ -121,7 +121,7 @@ const track2 = [
                 <div className="flex justify-between items-start w-full">
 
                     <div className="text-4xl sm:text-6xl text-foreground/10 grunge-text rotate-90 pointer-events-none select-none">
-                    ////
+                        {"////"}
                     </div>
 
                     <div className="flex flex-col items-center gap-4">
@@ -145,6 +145,16 @@ const track2 = [
                 </div>
 
                 <div className="w-full mt-auto flex flex-col justify-center relative z-20 mix-blend-difference">
+                    <div className="mb-6 sm:mb-8">
+                        <span className="inline-flex items-center gap-2.5 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground border border-border/50 rounded-full px-4 py-2">
+                            <span className="relative flex w-1.5 h-1.5">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                                <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-primary" />
+                            </span>
+                            {content.hero.availability}
+                        </span>
+                    </div>
+
                     <div className="overflow-hidden">
                         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[140px] font-black tracking-tighter leading-[0.85] text-foreground uppercase whitespace-nowrap">
                             Arjun Reddy

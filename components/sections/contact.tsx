@@ -4,6 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/providers/language-provider";
 import { BlurReveal } from "@/components/effects/blur-reveal";
 
+type SocialLink = { label: string; href: string };
+
 export default function Contact() {
     const { content } = useLanguage();
 
@@ -17,7 +19,7 @@ export default function Contact() {
                     <div className="flex flex-col gap-4 mb-16 lg:mb-32">
                         <BlurReveal>
                             <span className="title-counter">
-                                [005]
+                                [009]
                             </span>
                         </BlurReveal>
 
@@ -71,6 +73,16 @@ export default function Contact() {
                             </div>
                         </a>
                     </BlurReveal>
+                    <BlurReveal>
+                        <div className="flex flex-col md:flex-row md:items-center justify-between py-10 md:py-14 border-b border-border/50">
+                            <span className="text-sm font-mono tracking-widest text-muted-foreground uppercase mb-4 md:mb-0">
+                                {content.contact.based_in}
+                            </span>
+                            <span className="text-2xl lg:text-3xl font-semibold tracking-tight text-foreground">
+                                {content.contact.location}
+                            </span>
+                        </div>
+                    </BlurReveal>
                 </div>
 
                 <div className="w-full flex flex-col md:flex-row items-center justify-between pb-12 xl:py-12 xl:border-t border-border/50 gap-8">
@@ -82,7 +94,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-wrap items-center justify-center gap-4">
-                        {content.social.items.map((link: any) => (
+                        {content.social.items.map((link: SocialLink) => (
                             <BlurReveal key={link.label}>
                                 <a
                                     href={link.href}

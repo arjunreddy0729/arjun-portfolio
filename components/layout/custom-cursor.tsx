@@ -18,8 +18,10 @@ export function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        setIsMounted(true);
-        if (window.matchMedia("(pointer: coarse)").matches) return;
+        const mount = requestAnimationFrame(() => setIsMounted(true));
+        if (window.matchMedia("(pointer: coarse)").matches) {
+            return () => cancelAnimationFrame(mount);
+        }
 
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX);
@@ -60,6 +62,7 @@ export function CustomCursor() {
         document.addEventListener("mouseenter", handleMouseEnter);
 
         return () => {
+            cancelAnimationFrame(mount);
             window.removeEventListener("mousemove", moveCursor);
             window.removeEventListener("mouseover", handleMouseOver);
             document.removeEventListener("mouseleave", handleMouseLeave);

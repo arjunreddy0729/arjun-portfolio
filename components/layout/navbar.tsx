@@ -39,7 +39,11 @@ export default function Navbar() {
     { name: content.nav.about, href: "#about" },
     { name: content.nav.stack, href: "#stack" },
     { name: content.nav.projects, href: "#projects" },
+    { name: content.nav.architecture, href: "#architecture" },
+    { name: content.nav.experience, href: "#experience" },
     { name: content.nav.roadmap, href: "#roadmap" },
+    { name: content.nav.certifications, href: "#certifications" },
+    { name: content.nav.assistant, href: "#assistant" },
     { name: content.nav.contact, href: "#contact" },
   ], [content.nav]);
 

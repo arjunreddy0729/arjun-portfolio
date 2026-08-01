@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/dialog";
 
 import { useLanguage } from "@/providers/language-provider";
+
+type SocialLink = { label: string; href: string };
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { useLenisModal } from "@/hooks/use-lenis-modal";
 
@@ -64,7 +66,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                     </div>
 
                     <div className="flex flex-wrap gap-3 items-center mt-6 sm:mt-8">
-                        {content.social.items.map((link: any) => (
+                        {content.social.items.map((link: SocialLink) => (
                             <div key={link.label}>
                                 <a
                                     href={link.href}

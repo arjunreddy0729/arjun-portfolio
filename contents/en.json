@@ -1,14 +1,55 @@
 {
-   "hero": {
-    "title": "I *build* intelligent software that bridges *creativity* and *logic*",
-    "stats": "***AI/ML*** & Full-Stack",
-    "cta_primary": "Contact Me",
-    "cta_secondary": "View Projects"
-},
+    "hero": {
+        "title": "I *build* intelligent software that bridges *creativity* and *logic*",
+        "stats": "***AI/ML*** & Full-Stack",
+        "cta_primary": "Contact Me",
+        "cta_secondary": "View Projects",
+        "availability": "Open to AI/ML, Data & Software Engineering roles",
+        "metrics": [
+            { "value": "3.91", "suffix": "/4.0", "label": "Graduate GPA" },
+            { "value": "94", "suffix": "%", "label": "CNN Model Accuracy" },
+            { "value": "40", "suffix": "+", "label": "Students Taught" },
+            { "value": "5", "suffix": "", "label": "BI Dashboards Shipped" }
+        ]
+    },
     "about": {
         "intro": "A developer who builds *real products* with *AI* and turns complex ideas into **clean, scalable software**.",
         "description": "An *AI/ML-focused* mindset; building end-to-end systems from intelligent backends to polished interfaces, learning through **hands-on experimentation**, and prioritizing ***purposeful code***.",
-        "full": "I'm a Computer Science graduate student at Stevens Institute of Technology (GPA: 3.91) currently interning at Sport Squad, Inc. (JOOLA) as a Business Development Intern — building AI-powered tools using generative, agentic, and embedded AI on the Shopify platform.\n\nI've worked across the full stack: React, Next.js, Flask, Node.js on the frontend and backend; TensorFlow, Scikit-learn, OpenAI GPT for machine learning and AI; and Power BI, DAX, and ETL pipelines for data analytics. I've shipped everything from CNN-based image classifiers to multi-page Streamlit AI applications.\n\nPreviously, I was a Graduate Teaching Assistant for CS 555: Agile Methods at Stevens, helping 40+ students with Scrum, Kanban, and sprint planning. Before that, I interned at Tata Consultancy Services building Power BI dashboards and data models for service monitoring.\n\nI don't consider it enough for something to just work. I care about clean architecture, maintainable code, and software that actually solves real problems. My current goal is to keep building at the intersection of AI and full-stack — systems that are both intelligent and intuitive."
+        "full": "I'm a Computer Science graduate student at Stevens Institute of Technology (GPA: 3.91) currently interning at Sport Squad, Inc. (JOOLA) as a Business Development Intern — building AI-powered tools using generative, agentic, and embedded AI on the Shopify platform.\n\nI've worked across the full stack: React, Next.js, Flask, Node.js on the frontend and backend; TensorFlow, Scikit-learn, OpenAI GPT for machine learning and AI; and Power BI, DAX, and ETL pipelines for data analytics. I've shipped everything from CNN-based image classifiers to multi-page Streamlit AI applications.\n\nPreviously, I was a Graduate Teaching Assistant for CS 555: Agile Methods at Stevens, helping 40+ students with Scrum, Kanban, and sprint planning. Before that, I interned at Tata Consultancy Services building Power BI dashboards and data models for service monitoring.\n\nI don't consider it enough for something to just work. I care about clean architecture, maintainable code, and software that actually solves real problems. My current goal is to keep building at the intersection of AI and full-stack — systems that are both intelligent and intuitive.",
+        "education": [
+            {
+                "school": "Stevens Institute of Technology",
+                "degree": "M.S. Computer Science",
+                "grade": "GPA 3.91 / 4.0",
+                "location": "Hoboken, NJ",
+                "period": "Expected 2027"
+            },
+            {
+                "school": "CVR College of Engineering",
+                "degree": "B.Tech Computer Science & Engineering (AIML)",
+                "grade": "CGPA 8.04 / 10.0",
+                "location": "Hyderabad, India",
+                "period": "2021 – 2025"
+            }
+        ],
+        "focus_title": "Currently Exploring",
+        "focus": [
+            "Generative & Agentic AI",
+            "LLM Application Design",
+            "Prompt Engineering",
+            "Model Deployment",
+            "Full-Stack AI Products"
+        ],
+        "coursework_title": "Relevant Coursework",
+        "coursework": [
+            "Data Structures & Algorithms",
+            "Machine Learning",
+            "Artificial Intelligence",
+            "Operating Systems",
+            "Database Management Systems",
+            "Software Engineering",
+            "Computer Networks"
+        ]
     },
     "manifesto": {
         "items": [
@@ -42,6 +83,7 @@
                     { "name": "OpenAI", "icon": "https://cdn.simpleicons.org/openai" },
                     { "name": "Pandas", "icon": "https://cdn.simpleicons.org/pandas" },
                     { "name": "NumPy", "icon": "https://cdn.simpleicons.org/numpy" },
+                    { "name": "OpenCV", "icon": "https://cdn.simpleicons.org/opencv" },
                     { "name": "Streamlit", "icon": "https://cdn.simpleicons.org/streamlit" }
                 ]
             },
@@ -65,6 +107,7 @@
                     { "name": "MongoDB", "icon": "https://cdn.simpleicons.org/mongodb" },
                     { "name": "Docker", "icon": "https://cdn.simpleicons.org/docker" },
                     { "name": "AWS", "icon": "https://cdn.simpleicons.org/amazonaws" },
+                    { "name": "Postman", "icon": "https://cdn.simpleicons.org/postman" },
                     { "name": "Git", "icon": "https://cdn.simpleicons.org/git" }
                 ]
             }
@@ -78,30 +121,217 @@
                 "title": "AI Study Buddy",
                 "category": "AI Application",
                 "year": "2026",
+                "tagline": "Turns lecture PDFs into summaries, flashcards, quizzes, and a spaced-repetition plan.",
                 "description": "A multi-page AI study assistant that transforms lecture notes and PDFs into summaries, flashcards, quizzes, and interactive Q&A — with spaced repetition planning and difficulty-based flashcard tracking.",
-                "image": "/projects/study-buddy.jpg",
                 "repo": "https://github.com/arjunreddy0729/ai-study-buddy",
-                "stack": ["Python", "OpenAI GPT-4o", "Streamlit", "PyPDF2"]
+                "stack": ["Python", "OpenAI GPT-4o", "Streamlit", "PyPDF2", "REST API"],
+                "highlights": [
+                    "Multi-page study assistant that auto-generates summaries, flashcards, quizzes, and interactive Q&A from uploaded lecture PDFs, cutting study preparation time by 60%.",
+                    "Structured JSON prompts produce reliable MCQ and true/false questions with explanations, achieving 90% alignment with the source material.",
+                    "AI-powered spaced-repetition planner with difficulty-based flashcard tracking and session analytics to personalize study schedules."
+                ],
+                "metrics": [
+                    { "value": "60%", "label": "Less prep time" },
+                    { "value": "90%", "label": "Source alignment" },
+                    { "value": "4", "label": "Study modes" }
+                ],
+                "architecture": {
+                    "flow": ["PDF Upload", "PyPDF2 Extraction", "Structured JSON Prompts", "GPT-4o", "Streamlit Multi-Page UI"],
+                    "layers": [
+                        {
+                            "title": "Ingestion",
+                            "subtitle": "PyPDF2",
+                            "items": ["PDF upload", "Text extraction", "Chunking", "Note parsing"]
+                        },
+                        {
+                            "title": "Prompt Layer",
+                            "subtitle": "Structured JSON",
+                            "items": ["Summary prompts", "MCQ schema", "True/false schema", "Explanation fields"]
+                        },
+                        {
+                            "title": "AI Engine",
+                            "subtitle": "OpenAI GPT-4o",
+                            "items": ["Summarization", "Quiz generation", "Flashcard creation", "Interactive Q&A"]
+                        },
+                        {
+                            "title": "Study Logic",
+                            "subtitle": "Spaced Repetition",
+                            "items": ["Difficulty tracking", "Review scheduling", "Session analytics", "Progress state"]
+                        },
+                        {
+                            "title": "Interface",
+                            "subtitle": "Streamlit",
+                            "items": ["Multi-page app", "Upload flow", "Quiz runner", "Flashcard deck"]
+                        }
+                    ],
+                    "decisions": [
+                        { "title": "Structured JSON Prompts", "detail": "Forcing a JSON schema on generation makes quiz output parseable and repeatable instead of free-text that breaks the UI." },
+                        { "title": "Streamlit Multi-Page", "detail": "Page-per-mode keeps summary, flashcards, quiz, and Q&A state isolated without a separate frontend framework." }
+                    ]
+                }
             },
             {
                 "id": "2",
                 "title": "Emoji Detection System",
                 "category": "Machine Learning",
                 "year": "2026",
+                "tagline": "CNN emoji classifier hitting 94% accuracy with sub-200ms real-time inference.",
                 "description": "Deep learning emoji classifier using CNNs with 94% accuracy across 7 categories. Features real-time GUI prediction with sub-200ms inference latency and full data augmentation pipeline.",
-                "image": "/projects/emoji-detection.jpg",
                 "repo": "https://github.com/arjunreddy0729",
-                "stack": ["Python", "TensorFlow", "CNN", "OpenCV"]
+                "stack": ["Python", "TensorFlow", "CNN", "OpenCV", "REST API"],
+                "highlights": [
+                    "Trained a Convolutional Neural Network with data augmentation to classify 7 emoji categories, reaching 94% accuracy on F1-score evaluation.",
+                    "Streamlined image preprocessing by 60% with batch normalization and optimized OpenCV transforms for resizing, normalization, and augmentation.",
+                    "Deployed behind an interactive GUI for user-uploaded prediction, delivering real-time inference under 200ms latency."
+                ],
+                "metrics": [
+                    { "value": "94%", "label": "F1 accuracy" },
+                    { "value": "<200ms", "label": "Inference latency" },
+                    { "value": "7", "label": "Emoji classes" }
+                ],
+                "architecture": {
+                    "flow": ["Image Input", "OpenCV Preprocessing", "Augmentation", "CNN + BatchNorm", "GUI Prediction"],
+                    "layers": [
+                        {
+                            "title": "Input",
+                            "subtitle": "User Upload",
+                            "items": ["Image upload", "Format validation", "GUI capture", "Batch input"]
+                        },
+                        {
+                            "title": "Preprocessing",
+                            "subtitle": "OpenCV",
+                            "items": ["Resizing", "Normalization", "Color transforms", "60% faster pipeline"]
+                        },
+                        {
+                            "title": "Augmentation",
+                            "subtitle": "TensorFlow",
+                            "items": ["Rotation", "Flips", "Zoom / shift", "Class balancing"]
+                        },
+                        {
+                            "title": "Model",
+                            "subtitle": "CNN",
+                            "items": ["Conv blocks", "Batch normalization", "Dropout", "7-class softmax"]
+                        },
+                        {
+                            "title": "Serving",
+                            "subtitle": "Interactive GUI",
+                            "items": ["Real-time predict", "<200ms latency", "Confidence scores", "REST endpoint"]
+                        }
+                    ],
+                    "decisions": [
+                        { "title": "Batch Normalization", "detail": "Stabilizes training on a small, augmented dataset and lets the network converge at a higher learning rate." },
+                        { "title": "Augmentation First", "detail": "Rotation, flip, and zoom variants prevent the CNN from memorizing a limited set of emoji renderings." }
+                    ]
+                }
             },
             {
                 "id": "3",
                 "title": "ConvLSTM Video Classification",
                 "category": "Deep Learning",
                 "year": "2024",
+                "tagline": "Spatiotemporal video classification served as a production Flask REST API.",
                 "description": "Spatiotemporal video classification pipeline using ConvLSTM architecture for extracting temporal features from video sequences, deployed as a production-ready Flask REST API.",
-                "image": "/projects/video-classification.jpg",
                 "repo": "https://github.com/arjunreddy0729",
-                "stack": ["TensorFlow", "OpenCV", "Flask", "REST API"]
+                "stack": ["TensorFlow", "OpenCV", "ConvLSTM", "Flask", "REST API"],
+                "highlights": [
+                    "ConvLSTM architecture captures both spatial and temporal features across video frame sequences rather than classifying frames in isolation.",
+                    "OpenCV frame-extraction pipeline samples, resizes, and normalizes sequences into fixed-length tensors ready for training.",
+                    "Packaged as a Flask REST API so the trained model can be called as a service instead of run from a notebook."
+                ],
+                "metrics": [
+                    { "value": "ConvLSTM", "label": "Architecture" },
+                    { "value": "REST", "label": "Serving layer" },
+                    { "value": "2024", "label": "Built" }
+                ],
+                "architecture": {
+                    "flow": ["Video Input", "OpenCV Frame Sampling", "Sequence Tensors", "ConvLSTM Network", "Flask REST API"],
+                    "layers": [
+                        {
+                            "title": "Input",
+                            "subtitle": "Video Files",
+                            "items": ["Upload / path", "Codec handling", "Frame count check", "Class labels"]
+                        },
+                        {
+                            "title": "Extraction",
+                            "subtitle": "OpenCV",
+                            "items": ["Frame sampling", "Resizing", "Normalization", "Fixed-length windows"]
+                        },
+                        {
+                            "title": "Sequencing",
+                            "subtitle": "NumPy Tensors",
+                            "items": ["Frame stacking", "Padding", "Train/test split", "Batch generation"]
+                        },
+                        {
+                            "title": "Model",
+                            "subtitle": "ConvLSTM",
+                            "items": ["Spatial conv layers", "Temporal LSTM gates", "Dropout", "Softmax head"]
+                        },
+                        {
+                            "title": "Serving",
+                            "subtitle": "Flask",
+                            "items": ["REST endpoints", "Model loading", "JSON responses", "Production-ready"]
+                        }
+                    ],
+                    "decisions": [
+                        { "title": "ConvLSTM over CNN", "detail": "Frame-by-frame CNNs lose motion. ConvLSTM cells keep convolutional structure while carrying state across the sequence." },
+                        { "title": "Flask API Layer", "detail": "Wrapping the model in REST endpoints makes it callable from any client instead of locked inside a training notebook." }
+                    ]
+                }
+            }
+        ]
+    },
+    "architecture": {
+        "description": "How the systems are actually put together — from input layer to model to serving.",
+        "flow_label": "Pipeline",
+        "decisions_title": "Key Engineering Decisions"
+    },
+    "experience": {
+        "description": "AI engineering, teaching, and data analytics across product, academic, and enterprise teams.",
+        "items": [
+            {
+                "id": "01",
+                "role": "Business Development Intern (AI)",
+                "company": "Sport Squad, Inc. (JOOLA)",
+                "location": "North Bethesda, MD",
+                "type": "Internship",
+                "period": "May 2026 – Present",
+                "current": true,
+                "points": [
+                    "Developed generative, agentic, and embedded AI features, rapidly prototyping and iterating proofs of concept to validate ideas and demonstrate technical feasibility to product stakeholders.",
+                    "Integrated AI-powered chatbots, recommendation systems, and workflow automation into Shopify applications, collaborating with engineering and product teams to deliver functional prototypes.",
+                    "Preprocessed datasets, evaluated candidate models against problem-specific requirements, and optimized prompts while debugging production AI workflows to improve response reliability."
+                ],
+                "tags": ["Generative AI", "Agentic AI", "Prompt Engineering", "Shopify", "Recommendation Systems", "Workflow Automation"]
+            },
+            {
+                "id": "02",
+                "role": "Graduate Teaching Assistant — CS 555: Agile Methods",
+                "company": "Stevens Institute of Technology",
+                "location": "Hoboken, NJ",
+                "type": "Teaching",
+                "period": "Mar 2026 – May 2026",
+                "current": false,
+                "points": [
+                    "Boosted student comprehension of Agile methodologies by 20% on midterm scores, leading weekly office hours and doubt-clearing sessions on Scrum, Kanban, and sprint planning for 40+ students.",
+                    "Cut student preparation time by 30% by authoring comprehensive lecture notes, study guides, and practice materials across CS 555 course topics.",
+                    "Partnered with faculty to design assignments on user stories, backlog grooming, and Agile project management, strengthening overall course delivery."
+                ],
+                "tags": ["Scrum", "Kanban", "Sprint Planning", "User Stories", "Backlog Grooming", "Mentoring"]
+            },
+            {
+                "id": "03",
+                "role": "Software Development Intern",
+                "company": "Tata Consultancy Services (TCS)",
+                "location": "India",
+                "type": "Internship",
+                "period": "Dec 2024 – Mar 2025",
+                "current": false,
+                "points": [
+                    "Engineered 5 interactive Power BI dashboards for real-time service monitoring and performance tracking, increasing operational visibility by 40% across stakeholder teams.",
+                    "Accelerated KPI reporting by 50% by designing optimized data models and DAX measures analyzing service uptime, ticket resolution time, and incident trends.",
+                    "Improved data accuracy by 30% by transforming and integrating multi-source datasets through Power Query and ETL pipelines."
+                ],
+                "tags": ["Power BI", "DAX", "Power Query", "ETL Pipelines", "Data Modeling", "KPI Reporting"]
             }
         ]
     },
@@ -123,27 +353,72 @@
             {
                 "id": "03",
                 "year": "2024",
-                "description": "Built the ConvLSTM Video Classification system and Movie Recommendation engine. Interned at TCS building Power BI dashboards and ETL pipelines for service monitoring at scale.",
+                "description": "Built the ConvLSTM Video Classification system and Movie Recommendation engine. Joined TCS as a Software Development Intern building Power BI dashboards and ETL pipelines for service monitoring at scale.",
                 "tags": ["Power BI", "DAX", "TensorFlow", "Flask"]
             },
             {
                 "id": "04",
                 "year": "2025",
-                "description": "Started my M.S. in Computer Science at Stevens Institute of Technology. Became a Graduate Teaching Assistant for CS 555: Agile Methods, helping 40+ students master Scrum and Kanban.",
-                "tags": ["React", "Next.js", "Agile", "Stevens"]
+                "description": "Completed my B.Tech and started my M.S. in Computer Science at Stevens Institute of Technology, moving from Hyderabad to Hoboken and shifting focus toward AI systems and full-stack engineering.",
+                "tags": ["React", "Next.js", "Stevens", "AI Systems"]
             },
             {
                 "id": "05",
                 "year": "2026",
-                "description": "Joined Sport Squad, Inc. (JOOLA) as a Business Development Intern building AI-powered tools with generative AI, chatbots, and recommendation systems on the Shopify platform.",
-                "tags": ["OpenAI", "Generative AI", "Shopify", "Next.js"]
+                "description": "Became a Graduate Teaching Assistant for CS 555: Agile Methods, then joined Sport Squad, Inc. (JOOLA) building AI-powered tools with generative and agentic AI on the Shopify platform.",
+                "tags": ["OpenAI", "Generative AI", "Agentic AI", "Shopify"]
             }
+        ]
+    },
+    "certifications": {
+        "description": "Verified coursework in cybersecurity, generative AI, and cloud machine learning.",
+        "items": [
+            {
+                "name": "Google Cybersecurity Certificate",
+                "issuer": "Google",
+                "topics": ["Security Fundamentals", "Threat Analysis", "Network Security"]
+            },
+            {
+                "name": "Gen AI Academy",
+                "issuer": "Generative AI Program",
+                "topics": ["Generative AI", "Prompt Engineering", "LLM Applications"]
+            },
+            {
+                "name": "AWS Academy: Machine Learning Foundations",
+                "issuer": "Amazon Web Services",
+                "topics": ["ML Foundations", "Model Training", "Cloud Deployment"]
+            }
+        ]
+    },
+    "resume": {
+        "description": "The full record — education, experience, projects, skills, and certifications in one PDF.",
+        "file": "/Kadari-Arjun-Reddy-Resume.pdf",
+        "filename": "Kadari-Arjun-Reddy-Resume.pdf",
+        "role_line": "AI/ML Engineer • Full-Stack Developer • Data Analyst",
+        "highlights": ["Python", "TensorFlow", "OpenAI GPT", "React", "Next.js", "Flask", "Power BI", "SQL", "Docker", "AWS"]
+    },
+    "assistant": {
+        "description": "Ask anything about my projects, stack, experience, or background — this assistant knows the whole portfolio.",
+        "panel_title": "Portfolio AI Assistant",
+        "panel_subtitle": "Trained on Arjun's projects, experience, and resume",
+        "status": "Online",
+        "greeting": "Hi — I'm Arjun's portfolio assistant. Ask me about his projects, tech stack, experience, education, or what he's looking for next.",
+        "placeholder": "Ask about projects, architecture, experience...",
+        "error": "Something went wrong reaching the assistant. Try asking again.",
+        "suggestions": [
+            "What is Arjun working on right now?",
+            "Tell me about the AI Study Buddy",
+            "How does the emoji detection model work?",
+            "What is his tech stack?",
+            "What experience does he have?",
+            "Is he open to opportunities?"
         ]
     },
     "contact": {
         "description": "Whether it's an AI project, full-stack product, or just connecting over shared interests in tech — I'm always open.",
         "email": "arjunreddykadari89@gmail.com",
-        "phone": "+1 (551)-358-6240"
+        "phone": "+1 (551)-358-6240",
+        "location": "Jersey City, NJ — Open to Remote & Onsite"
     },
     "social": {
         "title": "SOCIAL",

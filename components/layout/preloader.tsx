@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "next-themes";
 
 export function Preloader() {
     const [isLoading, setIsLoading] = useState(true);
-    const { theme } = useTheme();
 
+    // Runs once per page load. It used to restart on every theme change, which
+    // replayed the intro whenever the theme resolved or the user toggled it.
     useEffect(() => {
-        setIsLoading(true);
-
         const timer = setTimeout(() => {
             setIsLoading(false);
             document.body.style.overflow = "";
@@ -22,7 +20,7 @@ export function Preloader() {
             clearTimeout(timer);
             document.body.style.overflow = "";
         };
-    }, [theme]);
+    }, []);
 
     return (
         <AnimatePresence>

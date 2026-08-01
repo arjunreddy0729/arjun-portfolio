@@ -8,8 +8,8 @@ import {
 
 import { useLenisModal } from "@/hooks/use-lenis-modal";
 import { useLanguage } from "@/providers/language-provider";
-import { Github, ExternalLink } from "lucide-react";
-import Image from "next/image";
+import { Github, ExternalLink, ChevronRight } from "lucide-react";
+import { ProjectVisual } from "@/components/widgets/project-visual";
 import type { ProjectItem } from "@/types/project";
 
 interface ProjectModalProps {
@@ -40,15 +40,7 @@ export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps)
                 <div className="overflow-y-auto w-full h-full flex-1" data-lenis-prevent="true">
 
                     <div className="relative w-full h-[40vh] sm:h-[50vh] shrink-0">
-                        {project.image && (
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover rounded-lg"
-                                priority
-                            />
-                        )}
+                        <ProjectVisual project={project} sizes="800px" priority className="rounded-lg" />
                         <div className="absolute inset-0 bg-linear-to-t from-background to-transparent" />
 
                         <div className="absolute bottom-6 left-6 right-6 sm:bottom-10 sm:left-10 sm:right-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -72,6 +64,58 @@ export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps)
                                 {project.description}
                             </p>
                         </div>
+
+                        {project.metrics && project.metrics.length > 0 && (
+                            <div>
+                                <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">{content?.others?.impact || "Impact"}</h3>
+                                <div className="grid grid-cols-3 gap-px bg-border/50 border border-border/50">
+                                    {project.metrics.map((metric) => (
+                                        <div key={metric.label} className="bg-background p-4 sm:p-6 flex flex-col gap-1">
+                                            <span className="text-2xl sm:text-3xl font-black tracking-tighter text-foreground">
+                                                {metric.value}
+                                            </span>
+                                            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                                                {metric.label}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {project.highlights && project.highlights.length > 0 && (
+                            <div>
+                                <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">{content?.others?.highlights || "What It Does"}</h3>
+                                <ul className="flex flex-col gap-4">
+                                    {project.highlights.map((point, index) => (
+                                        <li key={index} className="flex gap-4 text-foreground/80 leading-relaxed font-light">
+                                            <span className="text-[10px] font-mono text-muted-foreground/60 pt-1.5 shrink-0">
+                                                {String(index + 1).padStart(2, "0")}
+                                            </span>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {project.architecture && (
+                            <div>
+                                <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">Architecture</h3>
+                                <div className="flex flex-wrap items-center gap-2 p-4 sm:p-6 border border-border/50 bg-secondary/10">
+                                    {project.architecture.flow.map((step, index) => (
+                                        <span key={step} className="flex items-center gap-2">
+                                            <span className="text-xs font-mono uppercase tracking-wider text-foreground/70 border border-border/40 rounded-full px-3 py-1.5 bg-background">
+                                                {step}
+                                            </span>
+                                            {index < project.architecture!.flow.length - 1 && (
+                                                <ChevronRight className="w-3.5 h-3.5 text-muted-foreground/50" />
+                                            )}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         {project.stack && project.stack.length > 0 && (
                             <div>

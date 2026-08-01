@@ -42,11 +42,31 @@ Designed with a clean, modern interface inspired by award-winning web experience
 - Interactive animations powered by Framer Motion
 - Smooth scrolling experience using Lenis
 - Dark and light theme support
-- Project showcase with detailed information
-- Professional experience timeline
+- Project showcase with impact metrics, highlights, and pipeline breakdowns
+- System architecture section detailing each project layer by layer
+- Professional experience timeline and education/career roadmap
+- Certifications and downloadable resume
+- AI assistant that answers questions about my work
 - Technical skills overview
 - Contact section with social links
 - Optimized for desktop, tablet, and mobile devices
+
+---
+
+# AI Assistant
+
+The portfolio includes a chat assistant at `/api/chat` that answers visitor questions about my
+projects, stack, experience, and availability.
+
+It runs in two modes:
+
+- **With `ANTHROPIC_API_KEY` set** — questions go to Claude, grounded in a knowledge base built
+  from `contents/en.json` so answers stay factual.
+- **Without a key** — a keyword-matched local responder in `lib/portfolio-knowledge.ts` answers
+  from the same content. No setup, no cost, no dead input box.
+
+To enable the Claude-backed mode, add `ANTHROPIC_API_KEY` to your Vercel project environment
+variables (or a local `.env.local`) and redeploy. See `.env.example`.
 
 ---
 

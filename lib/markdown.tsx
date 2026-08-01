@@ -30,7 +30,7 @@ function parseInline(text: string): React.ReactNode {
     return <>{parts}</>;
 }
 
-export function parseMarkdown(data: any): any {
+export function parseMarkdown(data: unknown): unknown {
     if (typeof data === "string") {
         if (!/\*{1,3}[^*]+\*{1,3}/.test(data) && !data.includes("\n\n")) return data;
 
@@ -52,21 +52,25 @@ export function parseMarkdown(data: any): any {
     if (Array.isArray(data)) return data.map(parseMarkdown);
 
     if (typeof data === "object" && data !== null) {
-        const result: any = {};
-        for (const key in data) result[key] = parseMarkdown(data[key]);
+        const source = data as Record<string, unknown>;
+        const result: Record<string, unknown> = {};
+        for (const key in source) result[key] = parseMarkdown(source[key]);
         return result;
     }
 
     return data;
 }
 
-export function deepMerge(target: any, source: any): any {
-    const result = { ...target };
+export function deepMerge(
+    target: Record<string, unknown>,
+    source: Record<string, unknown>,
+): Record<string, unknown> {
+    const result: Record<string, unknown> = { ...target };
     for (const key of Object.keys(source)) {
         const s = source[key], t = target[key];
         result[key] =
             s && t && typeof s === "object" && typeof t === "object" && !Array.isArray(s) && !Array.isArray(t)
-                ? deepMerge(t, s)
+                ? deepMerge(t as Record<string, unknown>, s as Record<string, unknown>)
                 : s;
     }
     return result;

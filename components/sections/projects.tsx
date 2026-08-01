@@ -2,8 +2,8 @@
 
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
-import Image from "next/image";
 import { useLanguage } from "@/providers/language-provider";
+import { ProjectVisual } from "@/components/widgets/project-visual";
 import { useMediaQuery, BREAKPOINTS } from "@/hooks/use-media-query";
 import { BlurReveal } from "@/components/effects/blur-reveal";
 import { ProjectModal } from "@/components/modals/project-modal";
@@ -23,8 +23,10 @@ export default function Projects() {
 
     useEffect(() => {
         if (!isDesktop) {
-            setMeasurements({ scrollRange: 0, dynamicHeight: "auto" });
-            return;
+            const raf = requestAnimationFrame(() =>
+                setMeasurements({ scrollRange: 0, dynamicHeight: "auto" }),
+            );
+            return () => cancelAnimationFrame(raf);
         }
 
         const updateMeasurements = () => {
@@ -41,7 +43,7 @@ export default function Projects() {
             }
         };
 
-        updateMeasurements();
+        const raf = requestAnimationFrame(updateMeasurements);
 
         const timeout = setTimeout(updateMeasurements, 100);
         const resizeObserver = new ResizeObserver(() => {
@@ -53,6 +55,7 @@ export default function Projects() {
         }
 
         return () => {
+            cancelAnimationFrame(raf);
             clearTimeout(timeout);
             resizeObserver.disconnect();
         };
@@ -195,13 +198,10 @@ const ProjectCard = React.memo(({ project, onClick }: { project: ProjectItem; on
             >
                 <div className="relative w-full h-full overflow-hidden bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
                     <div className="absolute inset-0 z-0">
-                        <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
+                        <ProjectVisual
+                            project={project}
                             sizes="(max-width: 1280px) 100vw, 45vw"
-                            loading="lazy"
-                            className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"
+                            className="opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
                     </div>
@@ -230,3 +230,5 @@ const ProjectCard = React.memo(({ project, onClick }: { project: ProjectItem; on
         </BlurReveal>
     );
 });
+
+ProjectCard.displayName = "ProjectCard";

@@ -60,17 +60,17 @@ export function InteractiveParticles() {
                     this.y = Math.max(0, Math.min(this.y, h));
                 }
 
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let dist = Math.sqrt(dx * dx + dy * dy);
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
 
                 if (dist < mouse.radius) {
-                    let forceDirectionX = dx / dist;
-                    let forceDirectionY = dy / dist;
-                    let force = (mouse.radius - dist) / mouse.radius;
+                    const forceDirectionX = dx / dist;
+                    const forceDirectionY = dy / dist;
+                    const force = (mouse.radius - dist) / mouse.radius;
 
-                    let pushX = -forceDirectionX * force * 3 * dpr;
-                    let pushY = -forceDirectionY * force * 3 * dpr;
+                    const pushX = -forceDirectionX * force * 3 * dpr;
+                    const pushY = -forceDirectionY * force * 3 * dpr;
 
                     this.vx += pushX;
                     this.vy += pushY;
@@ -79,8 +79,8 @@ export function InteractiveParticles() {
                 this.vx += (this.baseVx - this.vx) * 0.04;
                 this.vy += (this.baseVy - this.vy) * 0.04;
 
-                let currentSpeed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-                let maxSpeed = 4 * dpr;
+                const currentSpeed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+                const maxSpeed = 4 * dpr;
                 if (currentSpeed > maxSpeed) {
                     this.vx = (this.vx / currentSpeed) * maxSpeed;
                     this.vy = (this.vy / currentSpeed) * maxSpeed;

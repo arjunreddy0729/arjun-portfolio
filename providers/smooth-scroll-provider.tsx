@@ -22,7 +22,12 @@ export default function SmoothScroll({
       smoothWheel: true,
     });
 
-    setLenis(lenisInstance);
+    // Publishing on a microtask keeps the instance out of the effect's
+    // synchronous render pass, which would cascade an extra render.
+    let published = true;
+    queueMicrotask(() => {
+      if (published) setLenis(lenisInstance);
+    });
 
     let rafId: number;
 
@@ -34,6 +39,7 @@ export default function SmoothScroll({
     rafId = requestAnimationFrame(raf);
 
     return () => {
+      published = false;
       cancelAnimationFrame(rafId);
       lenisInstance.destroy();
       setLenis(null);

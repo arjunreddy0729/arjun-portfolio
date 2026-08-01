@@ -6,6 +6,7 @@ import { useLanguage } from "@/providers/language-provider";
 import { useState } from "react";
 import { AboutModal } from "@/components/modals/about-modal";
 import { HangingProfile } from "@/components/widgets/hanging-profile";
+import type { EducationItem } from "@/types/project";
 
 export default function About() {
     const { content } = useLanguage();
@@ -72,6 +73,61 @@ export default function About() {
                                 </>
                             </BlurReveal>
 
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-px bg-border/50 border border-border/50">
+                            {content.about.education.map((item: EducationItem) => (
+                                <BlurReveal key={item.school}>
+                                    <div className="bg-background h-full p-8 xl:p-10 flex flex-col gap-3">
+                                        <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-muted-foreground/60">
+                                            {item.period} — {item.location}
+                                        </span>
+                                        <h4 className="text-2xl font-bold tracking-tight text-foreground leading-tight">
+                                            {item.school}
+                                        </h4>
+                                        <p className="text-muted-foreground">{item.degree}</p>
+                                        <span className="mt-2 w-fit text-xs font-mono uppercase tracking-widest text-foreground border border-border/50 rounded-full px-3 py-1">
+                                            {item.grade}
+                                        </span>
+                                    </div>
+                                </BlurReveal>
+                            ))}
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-12 xl:gap-16">
+                            <BlurReveal>
+                                <div className="flex flex-col gap-5">
+                                    <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground">
+                                        {content.about.focus_title}
+                                    </h4>
+                                    <ul className="flex flex-col gap-3">
+                                        {content.about.focus.map((item: string) => (
+                                            <li key={item} className="flex items-center gap-3 text-foreground/80">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </BlurReveal>
+
+                            <BlurReveal>
+                                <div className="flex flex-col gap-5">
+                                    <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground">
+                                        {content.about.coursework_title}
+                                    </h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {content.about.coursework.map((item: string) => (
+                                            <span
+                                                key={item}
+                                                className="text-xs uppercase tracking-wider text-muted-foreground font-medium px-3 py-1.5 rounded-full border border-border/40 bg-secondary/10"
+                                            >
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </BlurReveal>
                         </div>
 
                     </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 
 export const BREAKPOINTS = {
     sm: "(min-width: 640px)",
@@ -9,33 +9,19 @@ export const BREAKPOINTS = {
 } as const;
 
 export function useMediaQuery(query: string): boolean {
-    const [matches, setMatches] = useState(false);
+    const subscribe = useCallback(
+        (onChange: () => void) => {
+            const media = window.matchMedia(query);
+            media.addEventListener("change", onChange);
+            return () => media.removeEventListener("change", onChange);
+        },
+        [query],
+    );
 
-    useEffect(() => {
-        if (typeof window === "undefined") return;
+    const getSnapshot = useCallback(() => window.matchMedia(query).matches, [query]);
 
-        const media = window.matchMedia(query);
+    // Server and first client render agree on false, then the store syncs.
+    const getServerSnapshot = useCallback(() => false, []);
 
-        if (media.matches !== matches) {
-            setMatches(media.matches);
-        }
-
-        const listener = () => setMatches(media.matches);
-
-        if (media.addEventListener) {
-            media.addEventListener("change", listener);
-        } else {
-            media.addListener(listener);
-        }
-
-        return () => {
-            if (media.removeEventListener) {
-                media.removeEventListener("change", listener);
-            } else {
-                media.removeListener(listener);
-            }
-        };
-    }, [query]);
-
-    return matches;
+    return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
