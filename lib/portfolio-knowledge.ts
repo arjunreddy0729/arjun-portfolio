@@ -65,6 +65,7 @@ export function buildKnowledgeBase(): string {
                     );
                 }
                 if (item.repo) parts.push(`    Repository: ${item.repo}`);
+                if (item.demo) parts.push(`    Live demo: ${item.demo}`);
                 return parts.join('\n');
             })
             .join('\n')}`,

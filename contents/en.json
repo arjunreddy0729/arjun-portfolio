@@ -118,6 +118,7 @@
                 "tagline": "Turns lecture PDFs into summaries, flashcards, quizzes, and a spaced-repetition plan.",
                 "description": "A multi-page AI study assistant that transforms lecture notes and PDFs into summaries, flashcards, quizzes, and interactive Q&A — with spaced repetition planning and difficulty-based flashcard tracking.",
                 "repo": "https://github.com/arjunreddy0729/ai-study-buddy",
+                "demo": "https://ai-study-buddy-three-psi.vercel.app",
                 "stack": ["Python", "OpenAI GPT-4o", "Streamlit", "PyPDF2", "REST API"],
                 "highlights": [
                     "Multi-page study assistant that auto-generates summaries, flashcards, quizzes, and interactive Q&A from uploaded lecture PDFs, cutting study preparation time by 60%.",
