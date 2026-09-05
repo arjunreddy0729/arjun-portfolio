@@ -9,7 +9,7 @@
     "about": {
         "intro": "A developer who builds *real products* with *AI* and turns complex ideas into **clean, scalable software**.",
         "description": "An *AI/ML-focused* mindset; building end-to-end systems from intelligent backends to polished interfaces, learning through **hands-on experimentation**, and prioritizing ***purposeful code***.",
-        "full": "I'm a Computer Science graduate student at Stevens Institute of Technology (GPA: 3.91) currently interning at Sport Squad, Inc. (JOOLA) as a Business Development Intern — building AI-powered tools using generative, agentic, and embedded AI on the Shopify platform.\n\nI've worked across the full stack: React, Next.js, Flask, Node.js on the frontend and backend; TensorFlow, Scikit-learn, OpenAI GPT for machine learning and AI; and Power BI, DAX, and ETL pipelines for data analytics. I've shipped everything from CNN-based image classifiers to multi-page Streamlit AI applications.\n\nPreviously, I was a Graduate Teaching Assistant for CS 555: Agile Methods at Stevens, helping 40+ students with Scrum, Kanban, and sprint planning. Before that, I interned at Tata Consultancy Services building Power BI dashboards and data models for service monitoring.\n\nI don't consider it enough for something to just work. I care about clean architecture, maintainable code, and software that actually solves real problems. My current goal is to keep building at the intersection of AI and full-stack — systems that are both intelligent and intuitive.",
+        "full": "I'm a Computer Science graduate student at Stevens Institute of Technology (GPA: 3.91). Most recently I was an AI intern at Sport Squad, Inc. (JOOLA), where I built a conversational shopping assistant grounded in live Shopify data, a FastAPI-based product recommendation system, and AI content workflows for marketing.\n\nI've worked across the full stack: React, Next.js, Flask, Node.js on the frontend and backend; TensorFlow, Scikit-learn, OpenAI GPT for machine learning and AI; and Power BI, DAX, and ETL pipelines for data analytics. I've shipped everything from CNN-based image classifiers to multi-page Streamlit AI applications.\n\nBefore that, I was a Graduate Teaching Assistant for CS 555: Agile Methods at Stevens, helping 40+ students with Scrum, Kanban, and sprint planning. Before that, I interned at Tata Consultancy Services building Power BI dashboards and data models for service monitoring.\n\nI don't consider it enough for something to just work. I care about clean architecture, maintainable code, and software that actually solves real problems. My current goal is to keep building at the intersection of AI and full-stack — systems that are both intelligent and intuitive.",
         "education": [
             {
                 "school": "Stevens Institute of Technology",
@@ -289,14 +289,16 @@
                 "company": "Sport Squad, Inc. (JOOLA)",
                 "location": "North Bethesda, MD",
                 "type": "Internship",
-                "period": "May 2026 – Present",
-                "current": true,
+                "period": "May 2026 – Aug 2026",
+                "current": false,
                 "points": [
-                    "Developed generative, agentic, and embedded AI features, rapidly prototyping and iterating proofs of concept to validate ideas and demonstrate technical feasibility to product stakeholders.",
-                    "Integrated AI-powered chatbots, recommendation systems, and workflow automation into Shopify applications, collaborating with engineering and product teams to deliver functional prototypes.",
-                    "Preprocessed datasets, evaluated candidate models against problem-specific requirements, and optimized prompts while debugging production AI workflows to improve response reliability."
+                    "Built and integrated a conversational AI shopping assistant working against live Shopify product, pricing, inventory, order, and store data, using retrieval and tool-based workflows to ground responses in real business data.",
+                    "Developed a personalized Paddle Finder recommendation system with Python, FastAPI, product data, and structured user preferences.",
+                    "Built AI content intelligence and generation workflows for marketing use cases, including persona targeting and AEO/GEO optimization.",
+                    "Improved chatbot reliability and cost efficiency through model routing, caching, automated testing, fallback handling, and performance optimization.",
+                    "Collaborated with engineering and product teams to translate business requirements into functional AI prototypes and production-ready solutions."
                 ],
-                "tags": ["Generative AI", "Agentic AI", "Prompt Engineering", "Shopify", "Recommendation Systems", "Workflow Automation"]
+                "tags": ["Generative AI", "Agentic AI", "Retrieval / RAG", "FastAPI", "Shopify", "Recommendation Systems", "Model Routing", "Prompt Engineering"]
             },
             {
                 "id": "02",
@@ -317,7 +319,7 @@
                 "id": "03",
                 "role": "Software Development Intern",
                 "company": "Tata Consultancy Services (TCS)",
-                "location": "India",
+                "location": "Hyderabad, India",
                 "type": "Internship",
                 "period": "Dec 2024 – Mar 2025",
                 "current": false,
@@ -360,14 +362,24 @@
             {
                 "id": "05",
                 "year": "2026",
-                "description": "Became a Graduate Teaching Assistant for CS 555: Agile Methods, then joined Sport Squad, Inc. (JOOLA) building AI-powered tools with generative and agentic AI on the Shopify platform.",
+                "description": "Became a Graduate Teaching Assistant for CS 555: Agile Methods, then spent the summer at Sport Squad, Inc. (JOOLA) shipping AI-powered tools on the Shopify platform — a retrieval-grounded shopping assistant, a FastAPI recommendation service, and AI content workflows.",
                 "tags": ["OpenAI", "Generative AI", "Agentic AI", "Shopify"]
             }
         ]
     },
     "certifications": {
-        "description": "Verified coursework in cybersecurity, generative AI, and cloud machine learning.",
+        "description": "Verified coursework in generative AI, prompt engineering, data analytics, cybersecurity, and cloud machine learning.",
         "items": [
+            {
+                "name": "Claude Code in Action",
+                "issuer": "Anthropic",
+                "topics": ["Agentic Coding", "Developer Tooling", "AI Workflows"]
+            },
+            {
+                "name": "Deloitte Australia — Data Analytics Job Simulation",
+                "issuer": "Deloitte Australia · Forage",
+                "topics": ["Data Analysis", "Forensic Technology", "Business Insight"]
+            },
             {
                 "name": "Google Cybersecurity Certificate",
                 "issuer": "Google",
