@@ -41,6 +41,7 @@
 @theme inline {
   --spacing-container: var(--container-spacing);
   --animate-scroll: scroll 60s linear infinite;
+  --animate-scroll-fast: scroll 35s linear infinite;
 }
 
 @keyframes scroll {
@@ -225,7 +226,9 @@
   }
 
   .highlight-text-primary {
-    @apply text-foreground/80 italic font-serif font-light;
+    @apply text-foreground/80 italic font-light;
+    /* Editorial serif accent; --font-playfair is set on <body> by next/font. */
+    font-family: var(--font-playfair), ui-serif, Georgia, serif;
   }
 
   .highlight-text-secondary {

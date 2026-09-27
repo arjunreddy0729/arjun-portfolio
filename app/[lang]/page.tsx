@@ -1,6 +1,8 @@
 import ScrollProgress from "@/components/layout/scroll-progress";
 import ManifestoFlow from "@/components/effects/manifesto-flow";
+import StatusTicker from "@/components/effects/status-ticker";
 import Hero from "@/components/sections/hero";
+import Metrics from "@/components/sections/metrics";
 import About from "@/components/sections/about";
 import Stack from "@/components/sections/stack";
 import Projects from "@/components/sections/projects";
@@ -21,6 +23,8 @@ export default function Home() {
         <Hero />
 
         <div className="relative z-10 bg-background border-t border-border">
+
+          <Metrics />
 
           <section id="about">
             <About />
@@ -61,6 +65,8 @@ export default function Home() {
           <section id="assistant">
             <Assistant />
           </section>
+
+          <StatusTicker />
 
           <section id="contact">
             <Contact />

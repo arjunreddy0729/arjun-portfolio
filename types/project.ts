@@ -62,3 +62,10 @@ export type EducationItem = {
     location: string;
     period: string;
 };
+
+export type HeroMetric = {
+    /** Numeric portion, counted up on scroll; non-numeric values render as-is. */
+    value: string;
+    suffix: string;
+    label: string;
+};

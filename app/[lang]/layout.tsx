@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Inter, Syne, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import SmoothScroll from "@/providers/smooth-scroll-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
@@ -14,6 +14,8 @@ import { getDictionary, getContents } from "@/lib/loaders";
 
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+// Editorial serif used for the italic accent phrases in headings and copy.
+const playfair = Playfair_Display({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
   title: APP_CONFIG.NAME,
@@ -44,7 +46,7 @@ export default async function LangLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body className={`${inter.variable} ${syne.variable} font-sans bg-background text-foreground antialiased`}>
+      <body className={`${inter.variable} ${syne.variable} ${playfair.variable} font-sans bg-background text-foreground antialiased`}>
         <LanguageProvider lang={lang} dictionary={dictionary} contents={contents}>
           <ThemeProvider
             attribute="class"
