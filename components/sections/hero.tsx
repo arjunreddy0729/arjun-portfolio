@@ -6,7 +6,10 @@ import { useScroll, useTransform, useMotionTemplate, motion } from "framer-motio
 import { useLanguage } from "@/providers/language-provider";
 import { ArrowRight, Mouse } from "lucide-react";
 import { ContactModal } from "@/components/modals/contact-modal";
-import { InteractiveParticles } from "@/components/effects/interactive-particles";
+import dynamic from "next/dynamic";
+
+// Three.js is ~150 KB gzipped; load it after hydration so it never blocks first paint.
+const HyperspaceField = dynamic(() => import("@/components/effects/hyperspace-field"), { ssr: false });
 
 /** Tiles rendered per column before the loop duplicate. */
 const TILES_PER_COLUMN = 6;
@@ -61,7 +64,7 @@ export default function Hero() {
             className="sticky top-0 h-screen w-full flex flex-col justify-between bg-background px-container md:px-16 pt-28 pb-12 sm:pt-32 sm:pb-16 2xl:pb-24 overflow-hidden"
             id="home"
         >
-            <InteractiveParticles />
+            <HyperspaceField />
 
             <motion.div
                 style={{ opacity }}

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+export const PRELOADER_DONE_EVENT = "preloader:done";
+
 export function Preloader() {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -13,6 +15,10 @@ export function Preloader() {
         const timer = setTimeout(() => {
             setIsLoading(false);
             document.body.style.overflow = "";
+            // Lets effects time their entrance to the reveal. The attribute
+            // covers listeners that mount after the event has already fired.
+            document.documentElement.dataset.preloaded = "true";
+            window.dispatchEvent(new Event(PRELOADER_DONE_EVENT));
         }, 1200);
 
         document.body.style.overflow = "hidden";
