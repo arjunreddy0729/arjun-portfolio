@@ -6,7 +6,11 @@
         "cta_secondary": "View Projects",
         "availability": "Open to AI/ML, Data & Software Engineering roles",
         "gallery": [
-            "/hero-slider/profile.jpeg"
+            "/hero-slider/profile.jpeg",
+            "/hero-slider/profile-2.jpeg",
+            "/hero-slider/profile-3.jpeg",
+            "/hero-slider/profile-4.jpeg",
+            "/hero-slider/profile-5.jpeg"
         ],
         "metrics": [
             { "value": "3.91", "suffix": "/4.0", "label": "Graduate GPA" },
