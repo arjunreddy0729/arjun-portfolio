@@ -14,6 +14,8 @@ export type StageOptions = {
     far?: number;
     /** Device-pixel-ratio ceiling. Point clouds gain little above 1.5 but cost a lot. */
     maxDpr?: number;
+    /** Worth enabling for meshes; point clouds don't need it. */
+    antialias?: boolean;
     onFrame: (frame: FrameInfo) => void;
     onResize?: (width: number, height: number) => void;
 };
@@ -38,7 +40,7 @@ export function createStage(canvas: HTMLCanvasElement, options: StageOptions): S
         renderer = new THREE.WebGLRenderer({
             canvas,
             alpha: true,
-            antialias: false,
+            antialias: options.antialias ?? false,
             powerPreference: "high-performance",
         });
     } catch {

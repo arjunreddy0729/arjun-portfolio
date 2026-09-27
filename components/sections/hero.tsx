@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 
 // Three.js is ~150 KB gzipped; load it after hydration so it never blocks first paint.
 const HyperspaceField = dynamic(() => import("@/components/effects/hyperspace-field"), { ssr: false });
+const RobotHero = dynamic(() => import("@/components/effects/robot-hero"), { ssr: false });
 
 /** Tiles rendered per column before the loop duplicate. */
 const TILES_PER_COLUMN = 6;
@@ -65,6 +66,14 @@ export default function Hero() {
             id="home"
         >
             <HyperspaceField />
+
+            {/* Fills the space between the headline and the photo columns; desktop only. */}
+            <motion.div
+                style={{ opacity, filter }}
+                className="hidden lg:block absolute top-20 bottom-0 left-1/2 -translate-x-1/2 w-[40vw] max-w-[680px] z-15 pointer-events-none"
+            >
+                <RobotHero />
+            </motion.div>
 
             <motion.div
                 style={{ opacity }}
@@ -171,10 +180,10 @@ export default function Hero() {
 
                     <div className="overflow-hidden">
                         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[140px] font-black tracking-tighter leading-[0.85] text-foreground uppercase whitespace-nowrap">
-                            Arjun Reddy
+                            {content.hero.name}
                             <br />
                             <span className="text-foreground/80">
-                                Portfolio
+                                {content.hero.role}
                             </span>
                         </h1>
                     </div>
@@ -187,6 +196,7 @@ export default function Hero() {
 
                     <div className="flex flex-col sm:flex-row flex-wrap sm:items-center gap-4">
                         <button
+                            data-robot="ThumbsUp"
                             onClick={() => setContactOpen(true)}
                             className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-border/50 bg-foreground px-6 xl:px-10 text-background transition-all duration-500 ease-out hover:bg-background hover:border-foreground/30 hover:text-foreground shadow-2xl hover:-translate-y-0.5"
                         >
@@ -200,6 +210,7 @@ export default function Hero() {
                         </button>
 
                         <button
+                            data-robot="Yes"
                             onClick={scrollToProjects}
                             className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center px-6 xl:px-10 text-muted-foreground transition-all duration-500 hover:text-foreground hover:bg-secondary/15 rounded-full border border-border sm:border-transparent hover:border-border/30 backdrop-blur-sm"
                         >

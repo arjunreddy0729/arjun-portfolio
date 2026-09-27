@@ -1,5 +1,7 @@
 {
     "hero": {
+        "name": "Arjun Reddy",
+        "role": "AI Engineer",
         "title": "I *build* intelligent software that bridges *creativity* and *logic*",
         "stats": "***AI/ML*** & Full-Stack",
         "cta_primary": "Contact Me",
