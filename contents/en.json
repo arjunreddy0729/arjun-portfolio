@@ -430,6 +430,12 @@
         "panel_title": "Portfolio AI Assistant",
         "panel_subtitle": "Trained on Arjun's projects, experience, and resume",
         "status": "Online",
+        "core_states": {
+            "idle": "Neural core · Ready",
+            "listening": "Listening",
+            "thinking": "Thinking",
+            "answering": "Responding"
+        },
         "greeting": "Hi — I'm Arjun's portfolio assistant. Ask me about his projects, tech stack, experience, education, or what he's looking for next.",
         "placeholder": "Ask about projects, architecture, experience...",
         "error": "Something went wrong reaching the assistant. Try asking again.",

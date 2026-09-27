@@ -6,6 +6,14 @@ import { ArrowUp, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BlurReveal } from "@/components/effects/blur-reveal";
 import { useLanguage } from "@/providers/language-provider";
+import dynamic from "next/dynamic";
+import type { CoreMode } from "@/components/effects/neural-core";
+
+// Below the fold, so Three.js loads only after hydration.
+const NeuralCore = dynamic(() => import("@/components/effects/neural-core"), { ssr: false });
+
+/** How long the core shows its answer wave before settling back to idle. */
+const ANSWER_MS = 1800;
 
 type Message = {
     role: "user" | "assistant";
@@ -18,6 +26,13 @@ export default function Assistant() {
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
     const [isSending, setIsSending] = useState(false);
+    const [phase, setPhase] = useState<"idle" | "thinking" | "answering">("idle");
+    const answerTimer = useRef<number | undefined>(undefined);
+
+    useEffect(() => () => window.clearTimeout(answerTimer.current), []);
+
+    // Typing into an idle assistant stirs the core before anything is sent.
+    const coreMode: CoreMode = phase === "idle" && input.trim() ? "listening" : phase;
 
     const scrollRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -35,6 +50,8 @@ export default function Assistant() {
         setMessages(nextMessages);
         setInput("");
         setIsSending(true);
+        window.clearTimeout(answerTimer.current);
+        setPhase("thinking");
 
         try {
             const response = await fetch("/api/chat", {
@@ -53,6 +70,8 @@ export default function Assistant() {
             setMessages([...nextMessages, { role: "assistant", content: content.assistant.error }]);
         } finally {
             setIsSending(false);
+            setPhase("answering");
+            answerTimer.current = window.setTimeout(() => setPhase("idle"), ANSWER_MS);
         }
     };
 
@@ -78,8 +97,23 @@ export default function Assistant() {
                     </BlurReveal>
                 </div>
 
+                <div className="max-w-6xl mx-auto grid items-center gap-8 lg:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+
                 <BlurReveal>
-                    <div className="max-w-4xl mx-auto border border-border/50 bg-secondary/5 backdrop-blur-md">
+                    <div className="relative h-[260px] sm:h-[320px] lg:h-[520px]">
+                        <NeuralCore mode={coreMode} />
+                        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">
+                            <span className={cn(
+                                "w-1.5 h-1.5 rounded-full bg-primary transition-opacity duration-500",
+                                coreMode === "idle" ? "opacity-40" : "opacity-100 animate-pulse",
+                            )} />
+                            {content.assistant.core_states?.[coreMode] ?? coreMode}
+                        </span>
+                    </div>
+                </BlurReveal>
+
+                <BlurReveal>
+                    <div className="border border-border/50 bg-secondary/5 backdrop-blur-md">
 
                         <div className="flex items-center justify-between gap-4 px-6 py-5 border-b border-border/50">
                             <div className="flex items-center gap-4">
@@ -101,7 +135,7 @@ export default function Assistant() {
                                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
                                     <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-primary" />
                                 </span>
-                                {content.assistant.status}
+                                {isSending ? content.assistant.thinking : content.assistant.status}
                             </span>
                         </div>
 
@@ -186,6 +220,8 @@ export default function Assistant() {
                         </div>
                     </div>
                 </BlurReveal>
+
+                </div>
             </div>
         </section>
     );
