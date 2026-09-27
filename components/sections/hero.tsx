@@ -10,7 +10,6 @@ import dynamic from "next/dynamic";
 
 // Three.js is ~150 KB gzipped; load it after hydration so it never blocks first paint.
 const HyperspaceField = dynamic(() => import("@/components/effects/hyperspace-field"), { ssr: false });
-const RobotHero = dynamic(() => import("@/components/effects/robot-hero"), { ssr: false });
 
 /** Tiles rendered per column before the loop duplicate. */
 const TILES_PER_COLUMN = 6;
@@ -66,14 +65,6 @@ export default function Hero() {
             id="home"
         >
             <HyperspaceField />
-
-            {/* Fills the space between the headline and the photo columns; desktop only. */}
-            <motion.div
-                style={{ opacity, filter }}
-                className="hidden lg:block absolute top-20 bottom-0 left-1/2 -translate-x-1/2 w-[40vw] max-w-[680px] z-15 pointer-events-none"
-            >
-                <RobotHero />
-            </motion.div>
 
             <motion.div
                 style={{ opacity }}
