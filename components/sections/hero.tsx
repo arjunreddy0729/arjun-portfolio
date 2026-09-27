@@ -1,12 +1,15 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { useScroll, useTransform, useMotionTemplate, motion } from "framer-motion";
 import { useLanguage } from "@/providers/language-provider";
 import { ArrowRight, Mouse } from "lucide-react";
 import { ContactModal } from "@/components/modals/contact-modal";
 import { InteractiveParticles } from "@/components/effects/interactive-particles";
+
+/** Tiles rendered per column before the loop duplicate. */
+const TILES_PER_COLUMN = 6;
 
 export default function Hero() {
     const { content } = useLanguage();
@@ -19,26 +22,31 @@ export default function Hero() {
     const y = useTransform(scrollY, [0, 800], [0, -150]);
     const blurValue = useTransform(scrollY, [0, 800], [0, 10]);
     const filter = useMotionTemplate`blur(${blurValue}px)`;
-    const track1 = [
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg"
-];
+    // Gallery photos come from contents/en.json so adding one is a content edit.
+    const configuredGallery: string[] | undefined = content?.hero?.gallery;
 
-const track2 = [
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg",
-    "/hero-slider/profile.jpeg"
-];
+    const { col1Images, col2Images } = useMemo(() => {
+        const gallery = configuredGallery?.length
+            ? configuredGallery
+            : ["/hero-slider/profile.jpeg"];
 
-    const col1Images = [...track1, ...track1];
-    const col2Images = [...track2, ...track2];
+        // Two columns scroll in opposite directions. With a single photo both
+        // columns show it; with several, alternate so neighbouring tiles differ.
+        const split = gallery.length > 1
+            ? [gallery.filter((_, i) => i % 2 === 0), gallery.filter((_, i) => i % 2 === 1)]
+            : [gallery, gallery];
+
+        // Repeat until each column has enough tiles to fill the viewport, then
+        // duplicate once more so the marquee loop has no visible seam.
+        const fill = (list: string[]) => {
+            const out: string[] = [];
+            while (out.length < TILES_PER_COLUMN) out.push(...list);
+            const trimmed = out.slice(0, TILES_PER_COLUMN);
+            return [...trimmed, ...trimmed];
+        };
+
+        return { col1Images: fill(split[0]), col2Images: fill(split[1]) };
+    }, [configuredGallery]);
 
     const scrollToProjects = useCallback(() => {
         const projectsSection = document.getElementById("projects");

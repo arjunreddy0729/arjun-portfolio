@@ -5,6 +5,9 @@
         "cta_primary": "Contact Me",
         "cta_secondary": "View Projects",
         "availability": "Open to AI/ML, Data & Software Engineering roles",
+        "gallery": [
+            "/hero-slider/profile.jpeg"
+        ],
         "metrics": [
             { "value": "3.91", "suffix": "/4.0", "label": "Graduate GPA" },
             { "value": "94", "suffix": "%", "label": "CNN Model Accuracy" },
